@@ -6,7 +6,7 @@ var guessesLeft = 9;
 // guessesSoFar will be an array
 var guessesSoFar = [];
 
-// Checks the userGuess to make sure it is a "letter" aka real guess
+// Checks the userGuess does not input till after the check
 var userGuess = null;
 
 // Generate a random letter
