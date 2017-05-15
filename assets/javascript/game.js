@@ -9,7 +9,7 @@ var guessesSoFar = [];
 // Checks the userGuess to make sure it is a "letter" aka real guess
 var userGuess = null;
 
-// Generate a random lette
+// Generate a random letter
 var letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 
 
@@ -20,7 +20,7 @@ document.onkeyup = function(event) { // creating the function
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 
-	// Check Area
+	// CHECK AREA
 	// Add the user's guess to guessesSoFar array only if it wasn't already previously picked
 	// picks has to be within the alphabet and a usable character
 	if (guessesSoFar.indexOf(userGuess) < 0 && alphabetLetters.indexOf(userGuess) >= 0) {
