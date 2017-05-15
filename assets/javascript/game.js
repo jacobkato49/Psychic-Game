@@ -16,15 +16,15 @@ var letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLette
 // Create a onkeyup event for button press
 document.onkeyup = function(event) { // creating the function
 
-	// When user presses a key, it records it and saves to userGuess
+	// When user presses a key, it records it and saves to userGuess creating string also putting lowercase
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 
 	// CHECK AREA
 	// Add the user's guess to guessesSoFar array only if it wasn't already previously picked
-	// picks has to be within the alphabet and a usable character
-	if (guessesSoFar.indexOf(userGuess) < 0 && alphabetLetters.indexOf(userGuess) >= 0) {
+	if (guessesSoFar.indexOf(userGuess) < 0 && alphabetLetters.indexOf(userGuess) >= 0) { //  make sure picks has to be within the alphabet/a usable character
 		guessesSoFar[guessesSoFar.length]=userGuess;
+
 		// if it is a new letter then decrease remaining guesses by 1
 		guessesLeft--;
 	}
