@@ -3,7 +3,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 
-// guessesSoFar will be an array
+// Array
 var guessesSoFar = [];
 
 // Checks the userGuess does not input till after the check
@@ -21,41 +21,39 @@ document.onkeyup = function(event) { // creating the function
 
 
 	// CHECK AREA
-	// Add the user's guess to guessesSoFar array only if it wasn't already previously picked
 	if (guessesSoFar.indexOf(userGuess) < 0 && alphabetLetters.indexOf(userGuess) >= 0) { //  make sure picks has to be within the alphabet/a usable character
 		guessesSoFar[guessesSoFar.length]=userGuess;
 
-		// if it is a new letter then decrease remaining guesses by 1
 		guessesLeft--;
 	}
 
 
 
-	// User WINS
-	// reset guessesLeft to 9, and empty the guessesSoFar array also have the computer make a new random pick
+	// WIN
+		// reset guessesLeft to 9, and empty the guessesSoFar array also have the computer make a new random pick
 	if (letterToBeGuessed == userGuess) {
 		wins++;
-		console.log("You won!");
+		console.log("Congrats you win!");
 		guessesLeft = 9;
 		guessesSoFar = [];
 		letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 
-		// console log out to check  for errors
+		//******* console log out to check  for errors
 		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
 	}
 
 
 
-	// User LOSS
-	// reset guessesLeft to 9, and empty the guessesSoFar array also have the computer make a new random pick
+	// LOSS
+		// reset guessesLeft to 9, and empty the guessesSoFar array also have the computer make a new random pick
 	if (guessesLeft == 0) {
 		losses++;
-		console.log("You lost!");
+		console.log("Sorry you lost! Feel free to try again.");
 		guessesLeft = 9;
 		guessesSoFar = [];
 		letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 
-		// console log out to check for errors
+		//***** console log out to check for errors
 		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
 	}
 
@@ -65,7 +63,7 @@ document.onkeyup = function(event) { // creating the function
 	var html = "<p><h4>Guess the letter</h4></p>" + "<p><h4>Wins: " + wins + "</h4></p>" + "<p><h4>Losses: " + losses + "</h4></p>" + "<p><h4>Guesses Left: " + guessesLeft + "</h4></p>" + "<p><h4>Your guesses so far: " + guessesSoFar + "</h4></p>";
 
 
-	// place html into the game ID
+	// Place html into the game ID
 	document.querySelector("#game").innerHTML = html;
 
 }
